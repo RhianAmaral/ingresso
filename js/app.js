@@ -1,9 +1,6 @@
-function comprar(){
+function comprar() {
     let tipo = document.getElementById('tipo-ingresso');
-    let qtd = parseInt(document.getElementById('qtd').value);
-
-    alert(tipo.value);
-    alert(qtd.value);
+    let qtd = document.getElementById('qtd').value;
 
     if (tipo.value == 'pista') {
         comprarPista(qtd);
@@ -11,19 +8,17 @@ function comprar(){
         comprarSuperior(qtd);
     } else {
         comprarInferior(qtd);
-    }
-       
+    } 
 }
 
-function comprarPista(qtd){
+function comprarPista(qtd) {
     let qtdPista = parseInt(document.getElementById('qtd-pista').textContent);
-    if (qtd > qtdPista){
-        alert('Quantidade indisponivel para tipo pista');
-    }else{
+    if (qtd > qtdPista) {
+        alert('Quantidade indisponível para tipo pista');
+    } else {
         qtdPista = qtdPista - qtd;
         document.getElementById('qtd-pista').textContent = qtdPista;
-        alert('Compra realizada com sucesso');
-
+        alert('Compra realizada com sucesso!');
     }
 }
 
@@ -32,8 +27,7 @@ function comprarSuperior(qtd) {
     if (qtd > qtdSuperior) {
         alert('Quantidade indisponível para tipo superior');
     } else {
-
-        qtdSuperior = qtdSuperior - qtd
+        qtdSuperior = qtdSuperior - qtd;
         document.getElementById('qtd-superior').textContent = qtdSuperior;
         alert('Compra realizada com sucesso!');
     }
